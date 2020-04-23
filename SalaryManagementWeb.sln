@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryManagementWeb", "SalaryManagementWeb\SalaryManagementWeb.csproj", "{BA04B8CD-4C3B-42CC-BA0F-203BC37DFB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryManagementClient", "SalaryManagementClient\SalaryManagementClient.csproj", "{3675F097-F8F8-441D-ADED-EB2C56E8E3DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA04B8CD-4C3B-42CC-BA0F-203BC37DFB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA04B8CD-4C3B-42CC-BA0F-203BC37DFB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA04B8CD-4C3B-42CC-BA0F-203BC37DFB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA04B8CD-4C3B-42CC-BA0F-203BC37DFB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3675F097-F8F8-441D-ADED-EB2C56E8E3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3675F097-F8F8-441D-ADED-EB2C56E8E3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3675F097-F8F8-441D-ADED-EB2C56E8E3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3675F097-F8F8-441D-ADED-EB2C56E8E3DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E30AEBC8-3BAB-4E6C-81EB-9F7372D66C34}
+	EndGlobalSection
+EndGlobal

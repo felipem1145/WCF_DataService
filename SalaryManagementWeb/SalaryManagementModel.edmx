@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SALARY_MANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CompanyRoles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Position" Type="varchar" MaxLength="50" />
+          <Property Name="ExpectedCTC" Type="decimal" Precision="12" Scale="3" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="varchar" MaxLength="100" />
+          <Property Name="ProjectManager" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeFirstName" Type="varchar" MaxLength="30" />
+          <Property Name="EmployeeLastName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SALARY_MANAGEMENT.Employee.EmployeeProject' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="EmployeeProject">
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="ExpectedFinishDate" Type="date" />
+          <Property Name="HoursWorked" Type="decimal" Precision="4" Scale="1" />
+          <Property Name="ExtraHours" Type="decimal" Precision="4" Scale="1" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'SALARY_MANAGEMENT.Employee.EmployeeRole' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="EmployeeRole">
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="Salary" Type="decimal" Precision="15" Scale="3" />
+          <Property Name="Startdate" Type="date" />
+          <Property Name="Finishdate" Type="date" />
+          <Property Name="EmployeeSavings" Type="decimal" Precision="15" Scale="4" />
+          <Property Name="SalaryCTC" Type="decimal" Precision="15" Scale="4" />
+          <Property Name="PFDeduction" Type="decimal" Precision="15" Scale="4" />
+          <Property Name="SalaryIncrement" Type="decimal" Precision="12" Scale="4" />
+          <Property Name="NetSalary" Type="decimal" Precision="15" Scale="4" />
+          <Property Name="OtherDeduction" Type="decimal" Precision="12" Scale="4" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'SALARY_MANAGEMENT.Employee.EmployeeProject', pero no se encuentra la tabla.
+        <Association Name="FK_EmployeeID" />-->
+        <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'SALARY_MANAGEMENT.Employee.EmployeeProject', pero no se encuentra la tabla.
+        <Association Name="FK_ProjectId" />-->
+        <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'SALARY_MANAGEMENT.Employee.EmployeeRole', pero no se encuentra la tabla.
+        <Association Name="FK_RoleID" />-->
+        <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'SALARY_MANAGEMENT.Employee.EmployeeRole', pero no se encuentra la tabla.
+        <Association Name="FKEmployeeID" />-->
+        <EntityContainer Name="SALARY_MANAGEMENTModelStoreContainer">
+          <EntitySet Name="CompanyRoles" EntityType="Self.CompanyRoles" Schema="Company" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="Company" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="Employee" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SALARY_MANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CompanyRoles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExpectedCTC" Type="Decimal" Precision="12" Scale="3" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectManager" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SALARY_MANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CompanyRoles" EntityType="Self.CompanyRoles" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SALARY_MANAGEMENTModelStoreContainer" CdmEntityContainer="SALARY_MANAGEMENTEntities">
+          <EntitySetMapping Name="CompanyRoles">
+            <EntityTypeMapping TypeName="SALARY_MANAGEMENTModel.CompanyRoles">
+              <MappingFragment StoreEntitySet="CompanyRoles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="SALARY_MANAGEMENTModel.Projects">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="SALARY_MANAGEMENTModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
